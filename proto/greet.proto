@@ -1,0 +1,48 @@
+syntax = "proto3"; // Specifies that this file uses Protocol Buffers version 3
+
+// Defines the Go package where the generated code will be placed
+option go_package = "./proto";
+
+// Defines the package name for this protocol buffer file
+package greet_service;
+
+// Service definition for handling different types of greeting requests
+service GreetService {
+
+    // A simple unary RPC where the client sends a request, and the server responds with a greeting message
+    rpc SayHello(NoParam) returns (HelloResponse);
+
+    // A server streaming RPC where the client sends a list of names,
+    // and the server responds with multiple greeting messages in a stream
+    rpc SayHelloServerSteam(NameList) returns (stream HelloResponse);
+
+    // A client streaming RPC where the client sends multiple names in a stream,
+    // and the server responds with a single message containing all greetings
+    rpc SayHelloClientStream(stream HelloRequest) returns (MessageList);
+
+    // A bidirectional streaming RPC where both client and server exchange multiple messages in real-time
+    rpc SayHelloBidirectionalStream(stream HelloRequest) returns (stream HelloResponse);
+}
+
+// Represents an empty request (used in SayHello)
+message NoParam {}
+
+// Represents a list of messages, used as a response in client streaming RPC
+message MessageList {
+    repeated string message = 1; // A repeated field to store multiple messages
+}
+
+// Represents a request containing a single name
+message HelloRequest {
+    string name = 1; // The name to be greeted
+}
+
+// Represents a response containing a single greeting message
+message HelloResponse {
+    string message = 1; // The greeting message
+}
+
+// Represents a list of names, used as a request in server streaming RPC
+message NameList {
+    repeated string names = 1; // A repeated field to store multiple names
+}
