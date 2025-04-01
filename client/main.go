@@ -12,7 +12,7 @@ const (
 )
 
 func main() {
-	conn, err := grpc.Dial("localhost"+port,grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := grpc.NewClient("localhost"+port,grpc.WithTransportCredentials(insecure.NewCredentials()))
 	defer conn.Close();
 	if(err!=nil){
 		log.Fatalf("Error in connecting to the server: %v",err)
