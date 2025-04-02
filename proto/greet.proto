@@ -14,7 +14,7 @@ service GreetService {
 
     // A server streaming RPC where the client sends a list of names,
     // and the server responds with multiple greeting messages in a stream
-    rpc SayHelloServerSteam(NameList) returns (stream HelloResponse);
+    rpc SayHelloServerStream(NameList) returns (stream HelloResponse);
 
     // A client streaming RPC where the client sends multiple names in a stream,
     // and the server responds with a single message containing all greetings

@@ -12,16 +12,16 @@ const (
 )
 
 func main() {
-	conn, err := grpc.NewClient("localhost"+port,grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := grpc.Dial("localhost"+port,grpc.WithTransportCredentials(insecure.NewCredentials()))
 	defer conn.Close();
 	if(err!=nil){
 		log.Fatalf("Error in connecting to the server: %v",err)
 
 	}
 	client := pb.NewGreetServiceClient(conn)
-	// names := &pb.NameList{
-	// 	Names: []string{"a","b","c","d"},
-	// }
-	callSayHello(client)
+	names := &pb.NameList{
+		Names: []string{"bhargav","ram","akhil","priyal"},
+	}
+	callSayHelloServerStream(client,names)
 
 }

@@ -253,10 +253,10 @@ const file_proto_greet_proto_rawDesc = "" +
 	"\rHelloResponse\x12\x18\n" +
 	"\amessage\x18\x01 \x01(\tR\amessage\" \n" +
 	"\bNameList\x12\x14\n" +
-	"\x05names\x18\x01 \x03(\tR\x05names2\xd1\x02\n" +
+	"\x05names\x18\x01 \x03(\tR\x05names2\xd2\x02\n" +
 	"\fGreetService\x12@\n" +
-	"\bSayHello\x12\x16.greet_service.NoParam\x1a\x1c.greet_service.HelloResponse\x12N\n" +
-	"\x13SayHelloServerSteam\x12\x17.greet_service.NameList\x1a\x1c.greet_service.HelloResponse0\x01\x12Q\n" +
+	"\bSayHello\x12\x16.greet_service.NoParam\x1a\x1c.greet_service.HelloResponse\x12O\n" +
+	"\x14SayHelloServerStream\x12\x17.greet_service.NameList\x1a\x1c.greet_service.HelloResponse0\x01\x12Q\n" +
 	"\x14SayHelloClientStream\x12\x1b.greet_service.HelloRequest\x1a\x1a.greet_service.MessageList(\x01\x12\\\n" +
 	"\x1bSayHelloBidirectionalStream\x12\x1b.greet_service.HelloRequest\x1a\x1c.greet_service.HelloResponse(\x010\x01B\tZ\a./protob\x06proto3"
 
@@ -282,11 +282,11 @@ var file_proto_greet_proto_goTypes = []any{
 }
 var file_proto_greet_proto_depIdxs = []int32{
 	0, // 0: greet_service.GreetService.SayHello:input_type -> greet_service.NoParam
-	4, // 1: greet_service.GreetService.SayHelloServerSteam:input_type -> greet_service.NameList
+	4, // 1: greet_service.GreetService.SayHelloServerStream:input_type -> greet_service.NameList
 	2, // 2: greet_service.GreetService.SayHelloClientStream:input_type -> greet_service.HelloRequest
 	2, // 3: greet_service.GreetService.SayHelloBidirectionalStream:input_type -> greet_service.HelloRequest
 	3, // 4: greet_service.GreetService.SayHello:output_type -> greet_service.HelloResponse
-	3, // 5: greet_service.GreetService.SayHelloServerSteam:output_type -> greet_service.HelloResponse
+	3, // 5: greet_service.GreetService.SayHelloServerStream:output_type -> greet_service.HelloResponse
 	1, // 6: greet_service.GreetService.SayHelloClientStream:output_type -> greet_service.MessageList
 	3, // 7: greet_service.GreetService.SayHelloBidirectionalStream:output_type -> greet_service.HelloResponse
 	4, // [4:8] is the sub-list for method output_type
